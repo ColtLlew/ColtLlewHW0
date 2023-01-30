@@ -20,5 +20,16 @@ module.exports = async (phrase) => {
     }
 
     //TODO: return the formattedObject
-    return JSON.stringify(results.data);
+    //return JSON.stringify(results.data);
+    let customObject = {
+        data: results.data,
+        status: results.status,
+        statusText: results.statusText,
+        headers: results.headers,
+        requestHeader: results.config.headers
+
+    }
+
+
+    return customObject;
 }
